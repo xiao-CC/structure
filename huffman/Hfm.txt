@@ -1,0 +1,32 @@
+package com.fx.drawPixel1229;
+
+/**
+ * 创建哈夫曼树
+ * {1,2,3,4}
+ * 
+ * @author chen
+ *
+ */
+public class Hfm {
+	
+	//1.根据指定数组创建对应的节点，保存到list中
+	
+	//2.对list进行排序(快排)
+	
+	//3.建树：
+	//3.1取出list中最小的两个节点，合并成父节点  同时删除最小的两个节点
+	//3.2把父节点添加到list中，重新排序
+	
+
+}
+class Node{
+	public int data;  //数据
+	public Node left;    
+	public Node rigth;
+	
+	public Node() {
+	}
+	public Node(int data) {
+		this.data = data;
+	}
+}

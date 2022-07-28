@@ -1,0 +1,60 @@
+package com.fx.tree1231;
+
+import java.util.Stack;
+
+public class HfmTree {
+	// 1.根据指定数组创建对应的节点，保存到list中
+
+	// 2.对list进行排序(快排)
+
+	// 3.建树：
+	// 3.1取出list中最小的两个节点，合并成父节点 同时删除最小的两个节点
+	// 3.2把父节点添加到list中，重新排序
+	
+	
+	//二叉树的遍历
+	// 前序：父-左-右       中序：左-父-右        后序：左-右-父
+	//递归实现中序遍历
+	public void preOrder(TreeNode root) {
+		if(root == null) {
+			return;
+		}
+		if(root.left != null) {
+			preOrder(root.left);
+		}
+		System.out.println(root.data+" ");
+		if(root.rigth != null) {
+			preOrder(root.rigth);
+		}
+	}
+	//循环实现中序遍历
+	public void preOrder2(TreeNode root) {
+		if(root == null) {
+			return;
+		}
+		TreeNode current = root;  //当前节点
+		Stack<TreeNode> stack = new Stack<>();  //遍历过程保存节点对象
+		while( current != null || !stack.isEmpty()) {
+			if(current != null) {
+				//压栈
+				stack.push(current);
+				current = current.left;
+			}else {
+				TreeNode node = stack.pop();  //弹出栈顶
+				System.out.println(node.data +" "); 
+				current = node.rigth;
+			}
+		}
+	}
+}
+class TreeNode{
+	public int data;  //数据
+	public TreeNode left;    
+	public TreeNode rigth;
+	
+	public TreeNode() {
+	}
+	public TreeNode(int data) {
+		this.data = data;
+	}
+}

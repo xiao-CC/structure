@@ -1,0 +1,55 @@
+package com.fx.hashMap0109;
+
+/**
+ * 自定义hashMap
+ *  练习：1.加上泛型
+ *      2.添加重复key
+ * 
+ * @author chen
+ *
+ */
+public class MyHashMap {
+	// 保存链表的数组
+	public Linked[] linkedArr;
+	public static final int LEN = 16; // 哈希表默认长度
+	public int size; // 当前长度
+
+	//默认长度
+	public MyHashMap() {
+		//调用方法
+		this(LEN);
+	}
+	//自定长度
+	public MyHashMap(int size) {
+		this.size = size;
+		
+		//初始化数组
+		linkedArr = new Linked[size];
+		//初始化数组元素
+		for(int i=0;i<linkedArr.length;i++) {
+			linkedArr[i] = new Linked();
+		}
+	}
+
+	//put
+	public void put(Object key,Object value) {
+		//根据KEY计算位置
+		int index = hash(key);
+		//把键值对添加到对应的链表中
+		linkedArr[index].add(key, value);
+	}
+	
+	
+	//get
+	public Object get(Object key) {
+		
+		return null;
+	}
+	
+	//hash  散列函数
+	// 哈希算法：
+	public int hash(Object key) {
+		return key.hashCode()%size;
+	}
+	
+}

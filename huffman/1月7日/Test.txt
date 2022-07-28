@@ -1,0 +1,14 @@
+package com.fx.list0107;
+
+public class Test {
+
+	public static void main(String[] args) {
+		MyLinkedList<String> link = new MyLinkedList<>();
+		link.add("a");
+		link.add("b");
+		link.add("c");
+		
+		System.out.println("size = "+link.size());
+		System.out.println("head = "+link.root.next.next.data);
+	}
+}

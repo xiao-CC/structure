@@ -1,0 +1,64 @@
+package com.fx.list0105;
+
+import java.util.ArrayList;
+
+/**
+ *   自定义MyArrayList
+ *  练习：1.把List改进，可以添加任何类型的数据
+ *      2.跟系统自带ArrayList 比较性能
+ *      3.系统ArrayList底层源码
+ * @author chen
+ *
+ */
+public class MyArrayList {
+	//原数组
+	public int[] arr = new int[0];
+	public int size; //记录长度
+	
+	//添加
+	public void add(int data) {
+		//变长后的数组
+		int[] newArr = new int[arr.length+1];
+		//把原数组中的数据复制到新数组中
+		for(int i=0;i<arr.length;i++) {
+			newArr[i] = arr[i];
+		}
+		//把新数据放到末尾
+		newArr[arr.length]=data;
+		//更新原数组地址
+		arr = newArr;
+		size++;
+	}
+	
+	//删除
+	public int delete(int index) {
+		
+		return 0;
+	}
+	
+	//交换
+	
+	//查找
+	public int get(int index){
+		
+		return 0;
+	}
+	
+	//长度
+	public int size() {
+		return size;
+	}
+	public static void main(String[] args) {
+		MyArrayList list = new MyArrayList();
+		//获取系统当前时间
+		long start = System.currentTimeMillis();
+		for(int i=0;i<10000;i++) {
+			list.add(i);
+		}
+		long last = System.currentTimeMillis();
+		System.out.println("耗时："+(last-start));
+		
+		
+	}
+	
+}

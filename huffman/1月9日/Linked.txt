@@ -1,0 +1,29 @@
+package com.fx.hashMap0109;
+
+//链表
+public class Linked {
+	public Node root;
+	public Node last;
+	public int size;
+
+	//添加
+	public void add(Object key,Object value) {
+		
+	}
+	//获取
+	
+}
+//节点
+class Node{
+	public Node next;
+	public Object key;    //键
+	public Object value;  //值
+	
+	public Node() {
+		
+	}
+	public Node(Object key,Object value) {
+		this.key = key;
+		this.value = value;
+	}
+}
